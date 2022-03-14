@@ -48,14 +48,14 @@ def dih(input_raw, xi) -> tuple[float, float, dict]:
         f_1, f_2 = func(x1), func(x2)
 
         data_table_dih["iter"].append(iter)
-        data_table_dih["x1"].append("{:.}".format(x1))
-        data_table_dih["x2"].append("{:.}".format(x2))
-        data_table_dih["f(x1)"].append("{:.}".format(f_1))
-        data_table_dih["f(x2)"].append("{:.}".format(f_2))
-        data_table_dih["a"].append("{:.}".format(left))
-        data_table_dih["b"].append("{:.}".format(right))
-        data_table_dih["b - a"].append("{:.}".format(length))
-        data_table_dih["ratio"].append("{:.}".format(ratio))
+        data_table_dih["x1"].append("{:.7f}".format(x1))
+        data_table_dih["x2"].append("{:.7f}".format(x2))
+        data_table_dih["f(x1)"].append("{:.7f}".format(f_1))
+        data_table_dih["f(x2)"].append("{:.7f}".format(f_2))
+        data_table_dih["a"].append("{:.7f}".format(left))
+        data_table_dih["b"].append("{:.7f}".format(right))
+        data_table_dih["b - a"].append("{:.7f}".format(length))
+        data_table_dih["ratio"].append("{:.7f}".format(ratio))
 
     xmin = (left + right) / 2
     fmin = func(xmin)
