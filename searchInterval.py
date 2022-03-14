@@ -41,8 +41,8 @@ def search(xi, x0) -> tuple[float, float, dict]:
         x[2] = x[1] + h
 
         data_table_search["iter"].append(iter)
-        data_table_search["x"].append(x[1])
-        data_table_search["f"].append(func(x[1]))
+        data_table_search["x"].append("{:.7f}".format(x[1]))
+        data_table_search["f"].append("{:.7f}".format(func(x[1])))
 
     if x[0] > x[2]:
         x[0], x[2] = x[2], x[0]
