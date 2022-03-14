@@ -1,4 +1,5 @@
 import math
+from operator import le
 from function import func
 
 
@@ -63,14 +64,14 @@ def golden(input_raw, xi) -> tuple[float, float, dict]:
         f_1, f_2 = func(x1), func(x2)
 
         data_table_gold["iter"].append(iter)
-        data_table_gold["x1"].append(x1)
-        data_table_gold["x2"].append(x2)
-        data_table_gold["f(x1)"].append(f_1)
-        data_table_gold["f(x2)"].append(f_2)
-        data_table_gold["a"].append(left)
-        data_table_gold["b"].append(right)
-        data_table_gold["b - a"].append(length)
-        data_table_gold["ratio"].append(ratio)
+        data_table_gold["x1"].append("{:.}".format(x1))
+        data_table_gold["x2"].append("{:.}".format(x2))
+        data_table_gold["f(x1)"].append("{:.}".format(f_1))
+        data_table_gold["f(x2)"].append("{:.}".format(f_2))
+        data_table_gold["a"].append("{:.}".format(left))
+        data_table_gold["b"].append("{:.}".format(right))
+        data_table_gold["b - a"].append("{:.}".format(length))
+        data_table_gold["ratio"].append("{:.}".format(ratio))
 
     xmin = (left + right) / 2
     fmin = func(xmin)
