@@ -30,16 +30,16 @@ def main():
     result_dih, func_result_dih, data_table_dih = dih(
         task1, xi)
 
-    """ result_gold, func_result_gold, data_table_golden_ratio = golden(
-        task1, xi) """
+    result_gold, func_result_gold, data_table_golden_ratio = golden(
+        task1, xi)
 
     result_search_a, result_search_b, data_table_search = search(xi, 0.)
 
     print(
         f"Dihotomy: Xmin = {result_dih}, Fmin = {func_result_dih}, Accuracy = {xi}")
 
-    """ print(
-        f"Golden Ratio: Xmin = {result_gold}, Fmin = {func_result_gold}, Accuracy = {xi}") """
+    print(
+        f"Golden Ratio: Xmin = {result_gold}, Fmin = {func_result_gold}, Accuracy = {xi}")
 
     print(
         f"Search Interval: Xmin from [{result_search_a};{result_search_b}] Accuracy = {xi}")
@@ -47,8 +47,8 @@ def main():
     with open("./dih.json", "w", encoding="utf_8") as file1:
         json.dump(data_table_dih, file1)
 
-    """ with open("./golden.json", "w", encoding="utf_8") as file2:
-        json.dump(data_table_golden_ratio, file) """
+    with open("./golden.json", "w", encoding="utf_8") as file2:
+        json.dump(data_table_golden_ratio, file2)
 
     with open("./search.json", "w", encoding="utf_8") as file3:
         json.dump(data_table_search, file3)

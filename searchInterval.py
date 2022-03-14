@@ -1,4 +1,3 @@
-import imp
 from function import func
 
 

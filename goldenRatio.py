@@ -32,10 +32,10 @@ def golden(input_raw, xi) -> tuple[float, float, dict]:
     left = input_raw.left
     right = input_raw.right
     iter = 0
-    gold = (5**0.5 + 1) / 2
+    gold = (float)(5**0.5 + 1) / 2
 
-    x1 = left + (1 - gold) * (right - left)
-    x2 = left + gold * (right - left)
+    x1 = left + (2 - gold) * (right - left)
+    x2 = left + (gold - 1) * (right - left)
 
     f_1, f_2 = func(x1), func(x2)
 
@@ -48,13 +48,13 @@ def golden(input_raw, xi) -> tuple[float, float, dict]:
             left = x1
             x1 = x2
             f_1 = f_2
-            x2 = left + gold * (right - left)
+            x2 = left + (gold - 1) * (right - left)
             f_2 = func(x2)
         else:
-            right = f_2
+            right = x2
             x2 = x1
             f_2 = f_1
-            x1 = left + (1 - gold) * (right - left)
+            x1 = left + (2 - gold) * (right - left)
             f_1 = func(x1)
 
         length = abs(right - left)
