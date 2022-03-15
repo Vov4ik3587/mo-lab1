@@ -19,7 +19,7 @@ def golden(input_raw, xi) -> tuple[float, float, dict]:
         tuple[float, float, dict]: Возвращает xmin, fmin и данные для таблиц
     """
     data_table_gold = {
-        "iter": [],
+        "iter": 0,
         "x1": [],
         "x2": [],
         "f(x1)": [],
@@ -63,7 +63,7 @@ def golden(input_raw, xi) -> tuple[float, float, dict]:
 
         f_1, f_2 = func(x1), func(x2)
 
-        data_table_gold["iter"].append(iter)
+        data_table_gold["iter"] = iter
         data_table_gold["x1"].append("{:.7f}".format(x1))
         data_table_gold["x2"].append("{:.7f}".format(x2))
         data_table_gold["f(x1)"].append("{:.7f}".format(f_1))

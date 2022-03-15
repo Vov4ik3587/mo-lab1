@@ -16,7 +16,7 @@ def search(xi, x0) -> tuple[float, float, dict]:
         tuple[float, float, dict]: Возвращает левую, правую границы и данные для таблицы
     """
     data_table_search = {
-        "iter": [],
+        "iter": 0,
         "x": [],
         "f": [],
     }
@@ -40,7 +40,7 @@ def search(xi, x0) -> tuple[float, float, dict]:
         h *= 2
         x[2] = x[1] + h
 
-        data_table_search["iter"].append(iter)
+        data_table_search["iter"] = iter
         data_table_search["x"].append("{:.7f}".format(x[1]))
         data_table_search["f"].append("{:.7f}".format(func(x[1])))
 
